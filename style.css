@@ -1,0 +1,120 @@
+body{
+    background-color: #000000;
+    overflow: hidden;
+}
+.form-control{
+    width: 20%;
+    display: inline-block;
+    margin-bottom: 2rem;
+    font-size: 1rem;
+}
+.btn{
+    margin-left: 9px;
+    font-size: 1rem;
+}
+
+h1{
+    margin-bottom: 20px;
+    padding: 5px;
+    font-size: 4.5rem;
+    color: #22092C;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-decoration: underline #22092C;
+}
+div{
+    color: white;
+}
+.T{
+    color: #53c44b;
+}
+.D{
+    color: #e2101b;
+}
+.content{
+    margin: auto;
+    width: 25%;
+    margin-top: 5px;
+    font-size: 1rem;
+}
+.delete{
+    border: 2px solid black;
+    justify-content: center;
+    margin-left: 20px;
+    height: 2rem;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+.done{
+    display: inline-block;
+}
+.name{
+    background-color: #22092C;
+    width: 11rem;
+    position: relative;
+    top:12rem;
+    align-content: center;
+    margin: auto;
+    height: 4rem;
+    border: 1px solid black;
+    border-radius: 20px 0px 20px 0px;
+    font-size: 2rem;
+    color: white;
+    z-index: 3;
+
+}
+.game_screen{
+    /* background-color: aquamarine; */
+    display: flex;
+    height: 60vh;
+    bottom: 10rem;
+    margin-bottom: 40px;
+}
+.Truth{
+    background-color: #5D9C59;
+    padding: 10px;
+    height: 60vh;
+    width: 40%;
+    margin: auto;
+    border-radius: 0px 50px 0px 50px;
+    margin-bottom: 60px;
+    border: 2px solid black;
+    color: white;
+    font-size: 5rem;
+    align-content: center;
+    padding-right: 30px;
+
+}
+.Dare{
+    background-color: #DF2E38;
+    padding: 10px;
+    height: 60vh;
+    width: 40%;
+    margin: auto;
+    border-radius: 50px 0px 50px 0px;
+    margin-bottom: 60px;
+    border: 2px solid black;
+    color: white;
+    font-size: 5rem;
+    align-content: center;
+    padding-left: 30px;
+}
+.Truth:hover{
+    cursor: pointer;
+    background-color: #53c44b;
+}
+.Dare:hover{
+    cursor: pointer;
+    background-color: #e2101b;
+}
+h1:hover{
+    cursor: pointer;
+}
+.para{
+    align-items: start;
+    font-size: 2rem;
+
+}
+.btnbot{
+    margin-bottom: 40px;
+    font-size: 2rem;
+}
