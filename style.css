@@ -1,5 +1,5 @@
 body{
-    background-color: #000000;
+    background-color: #F8F6E3;
     overflow: hidden;
 }
 .form-control{
@@ -17,18 +17,18 @@ h1{
     margin-bottom: 20px;
     padding: 5px;
     font-size: 4.5rem;
-    color: #22092C;
+    color: #6AD4DD;
     font-family: Georgia, 'Times New Roman', Times, serif;
-    text-decoration: underline #22092C;
+    text-decoration: underline #6AD4DD;
 }
 div{
-    color: white;
+    color: #7AA2E3;
 }
 .T{
-    color: #53c44b;
+    color: #97E7E1;
 }
 .D{
-    color: #e2101b;
+    color: #7AA2E3;
 }
 .content{
     margin: auto;
@@ -48,7 +48,7 @@ div{
     display: inline-block;
 }
 .name{
-    background-color: #22092C;
+    background-color: #6AD4DD;
     width: 11rem;
     position: relative;
     top:12rem;
@@ -67,10 +67,10 @@ div{
     display: flex;
     height: 60vh;
     bottom: 10rem;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
 }
 .Truth{
-    background-color: #5D9C59;
+    background-color: #97E7E1;
     padding: 10px;
     height: 60vh;
     width: 40%;
@@ -81,11 +81,11 @@ div{
     color: white;
     font-size: 5rem;
     align-content: center;
-    padding-right: 30px;
+    padding-right: 40px;
 
 }
 .Dare{
-    background-color: #DF2E38;
+    background-color: #7AA2E3;
     padding: 10px;
     height: 60vh;
     width: 40%;
@@ -96,15 +96,15 @@ div{
     color: white;
     font-size: 5rem;
     align-content: center;
-    padding-left: 30px;
+    padding-left: 40px;
 }
 .Truth:hover{
     cursor: pointer;
-    background-color: #53c44b;
+    background-color: #66fff5;
 }
 .Dare:hover{
     cursor: pointer;
-    background-color: #e2101b;
+    background-color: #5f9bfc;
 }
 h1:hover{
     cursor: pointer;
@@ -117,4 +117,8 @@ h1:hover{
 .btnbot{
     margin-bottom: 40px;
     font-size: 2rem;
+}
+.themes{
+    color: black;
+    cursor: pointer;
 }

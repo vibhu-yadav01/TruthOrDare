@@ -1,6 +1,3 @@
-
-let btn = document.querySelector("button");
-let inp = document.querySelector("input");
 let list = document.querySelector(".unorder");
 let nex = document.querySelector(".done");
 let check = 0;
@@ -53,6 +50,9 @@ let truth = [
 
 
 function starting(){
+    let btn = document.querySelector("button");
+    let inp = document.querySelector("input");
+    let list = document.querySelector(".unorder");
     btn.addEventListener("click", function(){
         let li = document.createElement("div");
         li.classList.add("content");
@@ -184,7 +184,7 @@ function quit_btn(screen){
     quitbtn.innerText = "Quit";
     quitbtn.classList.add("btnbot")
     quitbtn.classList.add("btn")
-    quitbtn.classList.add("btn-danger")
+    quitbtn.classList.add("btn-outline-primary")
     screen.appendChild(quitbtn);
     
   
@@ -194,7 +194,7 @@ function next_btn(screen){
     nextbtn.innerText = "Next";
     nextbtn.classList.add("btnbot")
     nextbtn.classList.add("btn")
-    nextbtn.classList.add("btn-success")
+    nextbtn.classList.add("btn-outline-secondary")
     screen.appendChild(nextbtn);
     checker();
 };
@@ -203,12 +203,12 @@ function next_btn(screen){
 function checker(){
     if(check > 0){
         console.log(check);
-        let reset = document.querySelector(".btn-danger");
+        let reset = document.querySelector(".btn-outline-primary");
         reset.addEventListener("click", function(){
             console.log("ended game");
             resetplayer();
         });
-        let next_player = document.querySelector(".btn-success");
+        let next_player = document.querySelector(".btn-outline-secondary");
         next_player.addEventListener("click", function(){
             game();
             console.log("next player");
@@ -220,16 +220,36 @@ function checker(){
 function resetplayer() {
     player = [];
     let screen = document.querySelector(".text-center");
-    screen.innerHTML = `    <div class="text-center">
-    <h1><span class="T">Truth </span>or <span class="D">Dare</span></h1>
-    <input type="text" placeholder="Name of player" class="form-control">
-    <button type="button" class="btn btn-outline-primary">Add</button>
-    <div class="done">
-    </div>
-    <div class="unorder">
-    </div>
-    </div>`;
-    starting();
-    
+    screen.innerHTML = `
+        <h1><span class="T">Truth </span>or <span class="D">Dare</span></h1>
+        <input type="text" placeholder="Name of player" class="form-control">
+        <button type="button" class="btn btn-outline-primary">Add</button>
+        <div class="done"></div>
+        <div class="unorder"></div>
+    `;
+
+    starting();  // Restart event listeners
 }
+
+
+//themes
+let bd = document.querySelector("body");
+let count = 0;
+let theme = document.querySelector(".themes");
+
+
+theme.addEventListener("click", function () {
+    count++;
+    console.log(count);
+
+    // Toggle theme based on count
+    if (count %2== 0) {
+        bd.style.backgroundColor = '#F8F6E3';
+        theme.style.color = '#000'
+        
+    } else {
+          bd.style.backgroundColor =`#000`;
+          theme.style.color = '#fff';
+    }
+});
 
