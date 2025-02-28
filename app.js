@@ -1,6 +1,7 @@
 let list = document.querySelector(".unorder");
 let nex = document.querySelector(".done");
 let check = 0;
+let save_index;
 let player = [];
 let dare = [
     "Talk in an accent for the next three rounds.",
@@ -149,7 +150,16 @@ function remove_btn(){
 
 function game(){
     let randIdx = Math.floor(Math.random() * player.length);
+    if(save_index===randIdx){ //so that no repetation of a same person
+        if(save_index == 0){
+            randIdx++;
+        }else{
+            randIdx--;
+        }
+    }
+    console.log(randIdx);
     let current_player = player[randIdx];
+    save_index = randIdx;
     let screen = document.querySelector(".text-center");
     screen.innerHTML = `<h1><span class="T">Truth </span>or <span class="D">Dare</span></h1>`;
 

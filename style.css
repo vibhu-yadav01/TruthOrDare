@@ -112,7 +112,6 @@ h1:hover{
 .para{
     align-items: start;
     font-size: 2rem;
-
 }
 .btnbot{
     margin-bottom: 40px;
@@ -121,4 +120,73 @@ h1:hover{
 .themes{
     color: black;
     cursor: pointer;
+}
+
+@media(max-width:860px){
+    .game_screen{
+        flex-direction: column;
+    }
+    .Truth{
+        height: 90vh;
+        width: 70%;
+        margin-bottom: 15px;
+    }
+    .Dare{
+        height: 90vh;
+        width: 70%;
+        margin-top: 15px;
+    }
+    .name{
+        top:14rem;
+    }
+
+}
+
+@media(max-width:440px){
+    .game_screen{
+        margin-bottom: 30px;
+    }
+    .Truth{
+        height: 80vh;
+        width: 70%;
+        margin-bottom: 20px;
+        font-size: 2.5rem;
+        padding: 10px;
+    }
+    .Dare{
+        height: 80vh;
+        width: 70%;
+        margin-top: 20px;
+        font-size: 2.5rem;
+        padding: 10px;
+    }
+    .name{
+        top:15rem;
+    }
+    h1{
+        margin-bottom: 10px;
+        padding: 5px;
+        font-size: 2rem;
+    }
+    .para{
+        font-size: 1rem;
+    }
+    .name{
+        width: 9rem;
+        top:13.5rem;
+        align-content: center;
+        margin: auto;
+        height: 3rem;
+    }
+    .form-control{
+        width: 50%;
+        display: inline-block;
+        margin-bottom: 2.2rem;
+        font-size: 1.2rem;
+    }
+    .content{
+        font-size: 1.5rem;
+        display: flex;
+        flex-direction: row;
+    }
 }
