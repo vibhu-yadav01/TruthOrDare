@@ -98,6 +98,12 @@ function starting(){
     btn.addEventListener("click", function(){
         let li = document.createElement("div");
         li.classList.add("content");
+        li.style.opacity = 0;
+        li.style.transform = "translateY(-10px)";
+        setTimeout(() => {
+            li.style.opacity = 1;
+            li.style.transform = "translateY(0)";
+        }, 100);
         li.innerText = inp.value;
         player.push(inp.value);
         Done();
@@ -304,3 +310,12 @@ theme.addEventListener("click", function () {
     }
 });
 
+//logo
+
+let logo = document.querySelector(".logo");
+let faze = document.querySelector(".faze");
+
+logo.addEventListener("click", ()=>{
+    logo.classList.add("fade");
+    faze.classList.remove("faze");
+})
