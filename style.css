@@ -1,5 +1,5 @@
 body{
-    background-color: #F8F6E3;
+    background-color: black;
     overflow: hidden;
 }
 .form-control{
@@ -122,13 +122,13 @@ h1:hover{
     font-size: 2rem;
 }
 .themes{
-    color: black;
+    color: white;
     cursor: pointer;
 }
 
 .logo{
     font-family: Georgia, 'Times New Roman', Times, serif;
-    background-color: black;
+    background-color: rgb(40, 38, 38);
     width: 50vh;
     height: 50vh;
     margin: auto;
@@ -141,6 +141,9 @@ h1:hover{
     border-radius: 25%;
     transform: translateY(-2rem);
     z-index: -10;
+}
+.logo:hover{
+    cursor: pointer;
 }
 .faze{
    transform: translateY(-50rem);
@@ -214,3 +217,5 @@ h1:hover{
         flex-direction: row;
     }
 }
+
+

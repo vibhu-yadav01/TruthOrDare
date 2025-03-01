@@ -317,5 +317,5 @@ let faze = document.querySelector(".faze");
 
 logo.addEventListener("click", ()=>{
     logo.classList.add("fade");
-    faze.classList.remove("faze");
+    faze.classList.remove("faze")
 })
