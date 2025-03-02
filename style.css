@@ -125,6 +125,16 @@ h1:hover{
     color: white;
     cursor: pointer;
 }
+@keyframes animate {
+    0%{
+        width: 50vh;
+        height: 50vh;
+    }
+    100%{
+        width: 60vh;
+        height: 60vh;
+    }
+}
 
 .logo{
     font-family: Georgia, 'Times New Roman', Times, serif;
@@ -141,7 +151,9 @@ h1:hover{
     border-radius: 25%;
     transform: translateY(-2rem);
     z-index: -10;
+    animation: animate 2s linear infinite ; /* Removed redundant 'normal normal' */
 }
+
 .logo:hover{
     cursor: pointer;
 }
@@ -217,5 +229,4 @@ h1:hover{
         flex-direction: row;
     }
 }
-
 
