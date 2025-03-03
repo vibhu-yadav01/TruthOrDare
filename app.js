@@ -98,12 +98,6 @@ function starting(){
     btn.addEventListener("click", function(){
         let li = document.createElement("div");
         li.classList.add("content");
-        li.style.opacity = 0;
-        li.style.transform = "translateY(-10px)";
-        setTimeout(() => {
-            li.style.opacity = 1;
-            li.style.transform = "translateY(0)";
-        }, 100);
         li.innerText = inp.value;
         player.push(inp.value);
         Done();
@@ -301,12 +295,12 @@ theme.addEventListener("click", function () {
 
     // Toggle theme based on count
     if (count %2== 0) {
-        bd.style.backgroundColor = '#F8F6E3';
-        theme.style.color = '#000'
+        bd.style.backgroundColor =`#000`;
+        theme.style.color = '#fff';
         
     } else {
-          bd.style.backgroundColor =`#000`;
-          theme.style.color = '#fff';
+        bd.style.backgroundColor = '#F8F6E3';
+        theme.style.color = '#000'
     }
 });
 
