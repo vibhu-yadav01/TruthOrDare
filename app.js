@@ -211,7 +211,7 @@ function game_screen(){
     d_select.addEventListener("click", ()=>{
         if(dare.innerText == "Dare"){
             boxD();
-            creteCompletebtn(t_select);
+            creteCompletebtn(d_select);
             if(truth.innerText == "Truth"){
                 quit_btn(screen);
                 next_btn(screen);
@@ -227,11 +227,25 @@ function creteCompletebtn(t_select){
     complete.classList.add("fa-thumbs-up");
     t_select.appendChild(complete);
 }
+function creteCompletebtn(d_select){
+    let complete = document.createElement("button");
+    complete.classList.add("btn-outline-success");
+    complete.classList.add("fa-solid");
+    complete.classList.add("fa-thumbs-up");
+    d_select.appendChild(complete);
+}
 document.addEventListener("click", (event) => {
     if (event.target.classList.contains("fa-solid")) {
-        console.log("It was clicked");
+        score();
     }
 });
+function score(){
+    let pl = document.querySelector(".name");
+    let pl_add = pl.innerText;
+    player[pl_add]++;
+    game();
+    
+}
 function boxT(){
     let randIdx = Math.floor(Math.random() * truth.length);
     let question = truth[randIdx];
