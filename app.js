@@ -151,7 +151,7 @@ function remove_btn(){
 }
 
 function game(){
-    let randIdx = Math.floor(Math.random() * player.length);
+    let randIdx = Math.floor(Math.random() * Object.keys(player).length);
     if(save_index===randIdx){ //so that no repetation of a same person
         if(save_index == 0){
             randIdx++;
@@ -160,7 +160,7 @@ function game(){
         }
     }
     console.log(randIdx);
-    let current_player = player[randIdx];
+    let current_player = Object.keys(player)[randIdx];
     save_index = randIdx;
     let screen = document.querySelector(".text-center");
     screen.innerHTML = `<h1><span class="T">Truth </span>or <span class="D">Dare</span></h1>`;
@@ -199,6 +199,7 @@ function game_screen(){
     t_select.addEventListener("click", ()=>{
         if(truth.innerText == "Truth"){
             boxT();
+            creteCompletebtn(t_select);
             if(dare.innerText == "Dare"){
                 quit_btn(screen);
                 next_btn(screen);
@@ -210,6 +211,7 @@ function game_screen(){
     d_select.addEventListener("click", ()=>{
         if(dare.innerText == "Dare"){
             boxD();
+            creteCompletebtn(t_select);
             if(truth.innerText == "Truth"){
                 quit_btn(screen);
                 next_btn(screen);
@@ -217,7 +219,19 @@ function game_screen(){
         }
     });
 }
-
+;
+function creteCompletebtn(t_select){
+    let complete = document.createElement("button");
+    complete.classList.add("btn-outline-success");
+    complete.classList.add("fa-solid");
+    complete.classList.add("fa-thumbs-up");
+    t_select.appendChild(complete);
+}
+document.addEventListener("click", (event) => {
+    if (event.target.classList.contains("fa-solid")) {
+        console.log("It was clicked");
+    }
+});
 function boxT(){
     let randIdx = Math.floor(Math.random() * truth.length);
     let question = truth[randIdx];
