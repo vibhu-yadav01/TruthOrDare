@@ -2,7 +2,7 @@ let list = document.querySelector(".unorder");
 let nex = document.querySelector(".done");
 let check = 0;
 let save_index;
-let player = [];
+let player = {};
 let dare = [
     "Talk in an accent for the next three rounds.",
     "Try to lick your elbow (Spoiler: You can’t, but watching you try will be funny!).",
@@ -99,7 +99,7 @@ function starting(){
         let li = document.createElement("div");
         li.classList.add("content");
         li.innerText = inp.value;
-        player.push(inp.value);
+        player[inp.value] = '0';
         Done();
    
        let del = document.createElement("button");
@@ -120,16 +120,18 @@ starting();
 list.addEventListener("click", function(event){
     if(event.target.nodeName == "BUTTON"){
         let lis = event.target.parentElement;
-        player.pop(lis);
         lis.remove();
-        if(player.length< 2){
+        let key = lis.innerText.replace('delete', '')
+        delete player[key];
+        console.log(player);
+        if(Object.keys(player).length< 2 && Object.keys(player).length>1 ){
             remove_btn();
         }
     }
 })
 
 function Done(){
-    if(player.length >= 2 && player.length<=2){
+    if(Object.keys(player).length== 2){
         let ok = document.createElement("button");
         ok.innerText = "Play";
         ok.classList.add("btn");
@@ -310,6 +312,6 @@ let logo = document.querySelector(".logo");
 let faze = document.querySelector(".faze");
 
 logo.addEventListener("click", ()=>{
-    logo.classList.add("fade");
-    faze.classList.remove("faze")
+    faze.classList.remove("faze");
+    logo.remove();
 })
