@@ -39,7 +39,6 @@ div{
     width: 25%;
     margin-top: 5px;
     font-size: 1rem;
-    text-decoration: underline;
 }
 .delete{
     border: 2px solid black;
@@ -229,4 +228,7 @@ h1:hover{
         display: flex;
         flex-direction: row;
     }
+}
+.fa-solid{
+    z-index: 5;
 }
