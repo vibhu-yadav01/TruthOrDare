@@ -126,17 +126,21 @@ h1:hover{
     cursor: pointer;
 }
 @keyframes animate {
-    0%{
+    0% {
         width: 50vh;
         height: 50vh;
     }
-    100%{
+    50% {
         width: 60vh;
         height: 60vh;
     }
+    100% {
+        width: 50vh;
+        height: 50vh;
+    }
 }
 
-.logo{
+.logo {
     font-family: Georgia, 'Times New Roman', Times, serif;
     background-color: rgb(40, 38, 38);
     width: 50vh;
@@ -151,8 +155,9 @@ h1:hover{
     border-radius: 25%;
     transform: translateY(-2rem);
     z-index: -10;
-    animation: animate 2s linear infinite ; /* Removed redundant 'normal normal' */
+    animation: animate 2s ease-in-out infinite;
 }
+
 
 .logo:hover{
     cursor: pointer;
