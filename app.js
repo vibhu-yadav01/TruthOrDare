@@ -163,13 +163,39 @@ function game(){
     let current_player = Object.keys(player)[randIdx];
     save_index = randIdx;
     let screen = document.querySelector(".text-center");
-    screen.innerHTML = `<h1><span class="T">Truth </span>or <span class="D">Dare</span></h1>`;
+    screen.innerHTML = `<h1><span class="T">Truth </span>or <span class="D">Dare</span></h1><div class="scoreboard"></div>`;
 
     let show = document.createElement("div");
     show.classList.add("name")
     show.innerText = current_player;
     console.log(current_player);
     screen.appendChild(show);
+    let score = document.createElement("div");
+    score.classList.add("name");
+    score.classList.add("score");
+    score.innerText = `View Score`;
+    screen.appendChild(score);
+    let body = document.querySelector("body");
+    score.addEventListener("click", () => {
+        if (body.classList.contains("scroll")) {
+            // First, scroll to the top before hiding overflow
+            window.scrollTo({ top: 0, behavior: "smooth" });
+    
+            // After scrolling is done, apply hidden overflow
+            setTimeout(() => {
+                body.classList.remove("scroll");
+                body.classList.add("no-scroll");
+            }, 500); // Adjust timeout based on scroll speed
+        } else {
+            window.scrollTo({ 
+                top: document.body.scrollHeight, 
+                behavior: "smooth" 
+            });
+            // Allow scrolling again
+            body.classList.remove("no-scroll");
+            body.classList.add("scroll");
+        }
+    });
     game_screen();
 }
 function game_screen(){
@@ -218,8 +244,35 @@ function game_screen(){
             }
         }
     });
-}
-;
+    let score = document.querySelector(".scoreboard");
+
+    // Create a new table
+    let table = document.createElement("table");
+    table.innerHTML = `
+        <thead>
+            <tr>
+                <th>Player</th>
+                <th>Score</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    `;
+
+    // Append new table to scoreboard
+    score.appendChild(table);
+
+    let tbody = table.querySelector("tbody");
+
+    for (let i = 0; i < Object.keys(player).length; i++) {
+        let row = document.createElement("tr");
+        row.innerHTML = `
+            <td>${Object.keys(player)[i]}</td>
+            <td>${Object.values(player)[i]}</td>
+        `;
+        tbody.appendChild(row);
+    }
+    
+};
 function creteCompletebtn(t_select){
     let complete = document.createElement("button");
     complete.classList.add("btn-outline-success");
@@ -236,10 +289,10 @@ function creteCompletebtn(d_select){
 }
 document.addEventListener("click", (event) => {
     if (event.target.classList.contains("fa-solid")) {
-        score();
+        plus_score();
     }
 });
-function score(){
+function plus_score(){
     let pl = document.querySelector(".name");
     let pl_add = pl.innerText;
     player[pl_add]++;
@@ -307,6 +360,7 @@ function resetplayer() {
         <button type="button" class="btn btn-outline-primary">Add</button>
         <div class="done"></div>
         <div class="unorder"></div>
+        <div class="scoreboard"></div>
     `;
 
     starting();  // Restart event listeners
@@ -343,3 +397,5 @@ logo.addEventListener("click", ()=>{
     faze.classList.remove("faze");
     logo.remove();
 })
+
+

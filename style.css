@@ -2,6 +2,13 @@ body{
     background-color: black;
     overflow: hidden;
 }
+.scroll {
+    overflow: overlay;
+}
+.no-scroll {
+    overflow: hidden;
+}
+
 .form-control{
     width: 20%;
     display: inline-block;
@@ -66,12 +73,24 @@ div{
     z-index: 3;
 
 }
+.score{
+    background-color: #5f9bfc;
+    cursor: pointer;
+}
+.score:hover{
+    background-color: #0062ff;
+}
+.scoreboard{
+    background-color: white;
+    position: absolute;
+    bottom: -30rem;
+    left: 40%;
+}
 .game_screen{
-    /* background-color: aquamarine; */
     display: flex;
     height: 60vh;
-    bottom: 10rem;
-    margin-bottom: 20px;
+    position: relative;
+    bottom: 5rem;
 }
 .Truth{
     background-color: #97E7E1;
@@ -104,11 +123,11 @@ div{
 }
 .Truth:hover{
     cursor: pointer;
-    background-color: #66fff5;
+    background-color: #00ffee;
 }
 .Dare:hover{
     cursor: pointer;
-    background-color: #5f9bfc;
+    background-color: #0062ff;
 }
 h1:hover{
     cursor: pointer;
@@ -120,6 +139,8 @@ h1:hover{
 .btnbot{
     margin-bottom: 40px;
     font-size: 2rem;
+    position: relative;
+    bottom: 4rem;
 }
 .themes{
     color: white;
@@ -236,4 +257,11 @@ h1:hover{
 }
 .fa-solid{
     z-index: 5;
+}
+table{
+    border: black;
+    color: black;
+    width: 20rem;
+    border-radius: 10px;
+
 }
