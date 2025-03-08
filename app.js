@@ -23,26 +23,6 @@ let dare = [
     "Try to rap about something random in the room (e.g., 'This lamp is so bright, it gives me the light!').",
     "Try to do a headstand or spin around 10 times and walk in a straight line.",
     "Let the group choose a silly new nickname for you that you must use for the rest of the game.",
-    "Pretend you’re on a cooking show and explain how to make a peanut butter and jelly sandwich in the most dramatic way possible.",
-    "Put ice cubes in your socks and wear them for the next two minutes.",
-    "Act like a cat for the next five minutes (meow, purr, and rub against furniture!).",
-    "Try to do a TikTok dance challenge on the spot.",
-    "Let another player style your hair however they want.",
-    "Say the alphabet backward as fast as you can.",
-    "Speak in third person until your next turn.",
-    "Send the fifth photo in your gallery to a random person in your contacts.",
-    "Let someone tickle you for 30 seconds without trying to stop them.",
-    "Pretend to be a waiter/waitress and take fake food orders from everyone in the room.",
-    "Talk with your tongue sticking out for the next three rounds.",
-    "Balance a spoon on your nose for 30 seconds.",
-    "Make up and perform a short rap about someone in the group.",
-    "Send a voice message to someone saying a random animal sound.",
-    "Let someone draw on your face with a washable marker.",
-    "Try to type a message with your toes and send it to someone.",
-    "For the next three minutes, act like you are in slow motion.",
-    "Call a random contact and tell them a joke with a serious voice.",
-    "Put on as many layers of clothing as possible in one minute.",
-    "For the next five minutes, pretend you’re in a TV commercial and try to sell random objects in the room."
 ];
 
 
@@ -68,25 +48,7 @@ let truth = [
     "What’s the most ridiculous thing you’ve ever done to impress someone?",
     "What’s the weirdest dream you’ve ever had?",
     "Have you ever laughed so hard at the wrong moment? What happened?",
-    "If you had to eat only one food for the rest of your life, what would it be?",
-    "What’s the weirdest thing you do when you're alone?",
-    "Have you ever talked to yourself in the mirror? What did you say?",
-    "What’s the most embarrassing thing you've ever said to a crush?",
-    "If you could be invisible for a day, what would you do?",
-    "What’s the strangest gift you’ve ever received?",
-    "Have you ever walked into something while looking at your phone?",
-    "What’s a lie you’ve told that you regret?",
-    "What’s the most awkward thing that’s ever happened to you at school/work?",
-    "If you had to marry one fictional character, who would it be and why?",
-    "What’s the longest you’ve gone without showering?",
-    "If you could erase one trend from history, what would it be?",
-    "What’s the weirdest thing you’ve ever eaten?",
-    "Have you ever snooped through someone’s phone? What did you find?",
-    "What’s something really childish that you still enjoy?",
-    "If you could trade places with a celebrity for a day, who would it be?",
-    "Have you ever fake-cried to get out of trouble?",
-    "What’s the most embarrassing thing your parents have caught you doing?",
-    "What’s one thing you hope no one ever finds out about you?"
+
 ];
 
 
