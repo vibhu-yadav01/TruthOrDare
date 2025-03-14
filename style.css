@@ -281,3 +281,54 @@ table{
     background-color: rgb(251, 56, 56);
     border-radius: 25%;
 }
+
+@keyframes win{
+    0% {
+        color: gold;
+        border-radius: 30% 30%;
+    }
+    25%{
+        color: rgb(241, 214, 65);
+        border-radius: 10% 10%;
+
+    }
+    50% {
+        color: rgb(247, 225, 102);
+        border-radius: 20% 20%;
+
+    }
+    100% {
+        color: gold;
+        border-radius: 30% 30%;
+
+    }
+}
+
+.winner{
+    height: 20rem;
+    width: 20rem;
+    border: 2px solid black;
+    border-radius: 25%;
+    background-color: white;
+    color: gold;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 4.5rem;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: win 2s ease-in-out infinite;
+}
+.next{
+    border: 2px solid black;
+    height: 4rem;
+    width: 7rem;
+    background-color: white;
+    border-radius: 10%;
+    font-size: 2rem;
+    color: green;
+}
+.next:hover{
+    background-color: greenyellow;
+    color: white;
+}

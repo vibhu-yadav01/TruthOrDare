@@ -1,5 +1,6 @@
 let list = document.querySelector(".unorder");
 let nex = document.querySelector(".done");
+let winner = document.querySelector(".winner");
 let check = 0;
 let save_index;
 let player = {};
@@ -54,6 +55,8 @@ let truth = [
 
 
 function starting(){
+    
+
     let btn = document.querySelector("button");
     let inp = document.querySelector("input");
     let list = document.querySelector(".unorder");
@@ -339,9 +342,22 @@ function checker(){
     
 };
 function resetplayer() {
+    let highscore = Object.keys(player)[0];
+    for(let i=0; i< Object.keys(player).length; i++){
+        if(highscore< Object.keys(player)[i]){
+        highscore = Object.keys(player)[i];    
+        }
+    }
     player = [];
     let screen = document.querySelector(".text-center");
-    screen.innerHTML = `
+    screen.innerHTML = `<h1>Winner </h1> <div class="winner">
+                <i class="fa-solid fa-crown"></i>
+                ${highscore}
+             </div><br>
+             <button class="btn next">Next</button>`;
+    let next = document.querySelector("button");
+    next.addEventListener("click", ()=>{
+        screen.innerHTML = `
         <h1><span class="T">Truth </span>or <span class="D">Dare</span></h1>
         <input type="text" placeholder="Name of player" class="form-control">
         <button type="button" class="btn btn-outline-primary">Add</button>
@@ -351,6 +367,8 @@ function resetplayer() {
     `;
 
     starting();  // Restart event listeners
+    })
+
 }
 
 
