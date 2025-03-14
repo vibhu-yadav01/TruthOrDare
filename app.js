@@ -57,6 +57,7 @@ function starting(){
     let btn = document.querySelector("button");
     let inp = document.querySelector("input");
     let list = document.querySelector(".unorder");
+    //input player
     btn.addEventListener("click", function(){
         let li = document.createElement("div");
         li.classList.add("content");
@@ -237,14 +238,12 @@ function game_screen(){
 };
 function creteCompletebtn(t_select){
     let complete = document.createElement("button");
-    complete.classList.add("btn-outline-success");
     complete.classList.add("fa-solid");
     complete.classList.add("fa-thumbs-up");
     t_select.appendChild(complete);
 }
 function creteCompletebtn(d_select){
     let complete = document.createElement("button");
-    complete.classList.add("btn-outline-success");
     complete.classList.add("fa-solid");
     complete.classList.add("fa-thumbs-up");
     d_select.appendChild(complete);
