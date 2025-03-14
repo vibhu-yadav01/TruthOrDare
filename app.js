@@ -189,6 +189,7 @@ function game_screen(){
         if(truth.innerText == "Truth"){
             boxT();
             creteCompletebtn(t_select);
+            creteNotCompletebtn(t_select);
             if(dare.innerText == "Dare"){
                 quit_btn(screen);
                 next_btn(screen);
@@ -201,6 +202,7 @@ function game_screen(){
         if(dare.innerText == "Dare"){
             boxD();
             creteCompletebtn(d_select);
+            creteNotCompletebtn(d_select);
             if(truth.innerText == "Truth"){
                 quit_btn(screen);
                 next_btn(screen);
@@ -249,7 +251,7 @@ function creteCompletebtn(d_select){
     d_select.appendChild(complete);
 }
 document.addEventListener("click", (event) => {
-    if (event.target.classList.contains("fa-solid")) {
+    if (event.target.classList.contains("fa-thumbs-up")) {
         plus_score();
     }
 });
@@ -257,6 +259,30 @@ function plus_score(){
     let pl = document.querySelector(".name");
     let pl_add = pl.innerText;
     player[pl_add]++;
+    game();
+    
+}
+function creteNotCompletebtn(t_select){
+    let complete = document.createElement("button");
+    complete.classList.add("fa-solid");
+    complete.classList.add("fa-thumbs-down");
+    t_select.appendChild(complete);
+}
+function creteNotCompletebtn(d_select){
+    let complete = document.createElement("button");
+    complete.classList.add("fa-solid");
+    complete.classList.add("fa-thumbs-down");
+    d_select.appendChild(complete);
+}
+document.addEventListener("click", (event) => {
+    if (event.target.classList.contains("fa-thumbs-down")) {
+        minus_score();
+    }
+});
+function minus_score(){
+    let pl = document.querySelector(".name");
+    let pl_add = pl.innerText;
+    player[pl_add]--;
     game();
     
 }

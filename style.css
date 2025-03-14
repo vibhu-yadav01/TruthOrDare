@@ -265,12 +265,19 @@ table{
     border-radius: 10px;
 
 }
-.fa-thumbs-up{
+.fa-solid{
     border-radius: 25%;
+    margin-left: 5px;
 }
 .fa-thumbs-up:hover{
     height: 2.9rem;
     width: 3.2rem;
     background-color: greenyellow;
+    border-radius: 25%;
+}
+.fa-thumbs-down:hover{
+    height: 2.9rem;
+    width: 3.2rem;
+    background-color: rgb(251, 56, 56);
     border-radius: 25%;
 }
