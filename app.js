@@ -215,32 +215,32 @@ function game_screen(){
     let score = document.querySelector(".scoreboard");
 
     // Create a new table
-    let table = document.createElement("table");
-    table.innerHTML = `
-        <thead>
-            <tr>
-                <th>Player</th>
-                <th>Score</th>
-            </tr>
-        </thead>
-        <tbody></tbody>
-    `;
+//     let table = document.createElement("table");
+//     table.innerHTML = `
+//         <thead>
+//             <tr>
+//                 <th>Player</th>
+//                 <th>Score</th>
+//             </tr>
+//         </thead>
+//         <tbody></tbody>
+//     `;
 
-    // Append new table to scoreboard
-    score.appendChild(table);
+//     // Append new table to scoreboard
+//     score.appendChild(table);
 
-    let tbody = table.querySelector("tbody");
+//     let tbody = table.querySelector("tbody");
 
-    for (let i = 0; i < Object.keys(player).length; i++) {
-        let row = document.createElement("tr");
-        row.innerHTML = `
-            <td>${Object.keys(player)[i]}</td>
-            <td>${Object.values(player)[i]}</td>
-        `;
-        tbody.appendChild(row);
-    }
+//     for (let i = 0; i < Object.keys(player).length; i++) {
+//         let row = document.createElement("tr");
+//         row.innerHTML = `
+//             <td>${Object.keys(player)[i]}</td>
+//             <td>${Object.values(player)[i]}</td>
+//         `;
+//         tbody.appendChild(row);
+//     }
     
-};
+// };
 function creteCompletebtn(t_select){
     let complete = document.createElement("button");
     complete.classList.add("fa-solid");
