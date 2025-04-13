@@ -2,13 +2,62 @@ body{
     background-color: black;
     overflow: hidden;
 }
+.scoreboard table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+.scoreboard th, .scoreboard td {
+    border: 2px solid #333;
+    padding: 10px;
+}
+
+.scoreboard thead {
+    background-color: #0062ff;
+    color: white;
+    font-weight: bold;
+}
+
+.scoreboard tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.scoreboard tbody tr:hover {
+    background-color: #ddd;
+    cursor: pointer;
+}
+.scoreboard table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+.scoreboard th, .scoreboard td {
+    border: 2px solid #333;
+    padding: 10px;
+}
+
+.scoreboard thead {
+    background-color: #0062ff;
+    color: white;
+    font-weight: bold;
+}
+
+.scoreboard tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.scoreboard tbody tr:hover {
+    background-color: #ddd;
+    cursor: pointer;
+}
 .scroll {
     overflow: overlay;
 }
 .no-scroll {
     overflow: hidden;
 }
-
 .form-control{
     width: 20%;
     display: inline-block;
@@ -73,19 +122,51 @@ div{
     z-index: 3;
 
 }
-.score{
-    background-color: #5f9bfc;
-    cursor: pointer;
-}
-.score:hover{
+.score {
+    position: fixed;
+    left: 0.5rem;
+    bottom: 42rem;
     background-color: #0062ff;
+    padding: 10px 20px;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 110; /* Higher than scoreboard */
+    letter-spacing: 2px;
 }
-.scoreboard{
+
+.score:hover {
+    background-color: #00ffee;
+}
+
+.scoreboard {
     background-color: white;
-    position: absolute;
-    bottom: -30rem;
-    left: 40%;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: transform 2s ease-in-out;
+    z-index: 1001; /* above overlay */
+    width: 90%;
+    max-width: 600px;
+    padding: 2px;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    display: none;
+    max-height: 70vh;
+    overflow-y: auto;
 }
+
+.scoreboard.show {
+    display: block;
+}
+
+
+
+.scoreboard.show {
+    transform: translate(-50%, 0); /* Slide up into view */
+}
+
 .game_screen{
     display: flex;
     height: 60vh;
