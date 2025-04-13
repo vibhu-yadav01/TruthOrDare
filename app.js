@@ -215,32 +215,32 @@ function game_screen(){
     let score = document.querySelector(".scoreboard");
 
     // Create a new table
-//     let table = document.createElement("table");
-//     table.innerHTML = `
-//         <thead>
-//             <tr>
-//                 <th>Player</th>
-//                 <th>Score</th>
-//             </tr>
-//         </thead>
-//         <tbody></tbody>
-//     `;
+    let table = document.createElement("table");
+    table.innerHTML = `
+        <thead>
+            <tr>
+                <th>Player</th>
+                <th>Score</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    `;
 
-//     // Append new table to scoreboard
-//     score.appendChild(table);
+    // Append new table to scoreboard
+    score.appendChild(table);
 
-//     let tbody = table.querySelector("tbody");
+    let tbody = table.querySelector("tbody");
 
-//     for (let i = 0; i < Object.keys(player).length; i++) {
-//         let row = document.createElement("tr");
-//         row.innerHTML = `
-//             <td>${Object.keys(player)[i]}</td>
-//             <td>${Object.values(player)[i]}</td>
-//         `;
-//         tbody.appendChild(row);
-//     }
+    for (let i = 0; i < Object.keys(player).length; i++) {
+        let row = document.createElement("tr");
+        row.innerHTML = `
+            <td>${Object.keys(player)[i]}</td>
+            <td>${Object.values(player)[i]}</td>
+        `;
+        tbody.appendChild(row);
+    }
     
-// };
+};
 function creteCompletebtn(t_select){
     let complete = document.createElement("button");
     complete.classList.add("fa-solid");
@@ -326,7 +326,6 @@ function next_btn(screen){
 
 function checker(){
     if(check > 0){
-        console.log(check);
         let reset = document.querySelector(".btn-outline-primary");
         reset.addEventListener("click", function(){
             console.log("ended game");
@@ -342,12 +341,18 @@ function checker(){
     
 };
 function resetplayer() {
-    let highscore = Object.keys(player)[0];
-    for(let i=0; i< Object.keys(player).length; i++){
-        if(highscore< Object.keys(player)[i]){
-        highscore = Object.keys(player)[i];    
-        }
-    }
+    let current_player = Object.keys(player)[1];
+
+    let highscore = (Object.keys(player)[0]); // Convert first key to a number
+    for(let i=0; i< Object.keys(player).length; i++)
+        { if(highscore< Object.keys(player)[i])
+            { 
+                highscore = Object.keys(player)[i];
+    } }
+    
+    
+    console.log("Highest score:", highscore);
+    console.log("current player:", current_player);
     player = [];
     let screen = document.querySelector(".text-center");
     screen.innerHTML = `<h1>Winner </h1> <div class="winner">
@@ -380,7 +385,6 @@ let theme = document.querySelector(".themes");
 
 theme.addEventListener("click", function () {
     count++;
-    console.log(count);
 
     // Toggle theme based on count
     if (count %2== 0) {
@@ -402,5 +406,4 @@ logo.addEventListener("click", ()=>{
     faze.classList.remove("faze");
     logo.remove();
 })
-
 
