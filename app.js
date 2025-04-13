@@ -137,31 +137,31 @@ function game(){
     console.log(current_player);
     screen.appendChild(show);
     let score = document.createElement("div");
-    score.classList.add("name");
     score.classList.add("score");
-    score.innerText = `View Score`;
+    score.classList.add("fa-sharp");
+    score.classList.add("fa-regular");
+    score.classList.add("fa-star");
+    score.innerText = `score`;
     screen.appendChild(score);
     let body = document.querySelector("body");
-    score.addEventListener("click", () => {
-        if (body.classList.contains("scroll")) {
-            // First, scroll to the top before hiding overflow
-            window.scrollTo({ top: 0, behavior: "smooth" });
+    let scoreboard = document.querySelector(".scoreboard");
     
-            // After scrolling is done, apply hidden overflow
-            setTimeout(() => {
-                body.classList.remove("scroll");
-                body.classList.add("no-scroll");
-            }, 500); // Adjust timeout based on scroll speed
+    score.addEventListener("click", () => {
+        // Toggle scoreboard pop-up
+        scoreboard.classList.toggle("show");
+    
+        // Scroll behavior (optional)
+        if (scoreboard.classList.contains("show")) {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+            body.classList.add("no-scroll");
+            body.classList.remove("scroll");
         } else {
-            window.scrollTo({ 
-                top: document.body.scrollHeight, 
-                behavior: "smooth" 
-            });
-            // Allow scrolling again
             body.classList.remove("no-scroll");
+            
             body.classList.add("scroll");
         }
     });
+    
     game_screen();
 }
 function game_screen(){
@@ -224,6 +224,7 @@ function game_screen(){
             </tr>
         </thead>
         <tbody></tbody>
+        <link rel="stylesheet" href="style.css">
     `;
 
     // Append new table to scoreboard
