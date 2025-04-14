@@ -69,7 +69,7 @@ function starting(){
         Done();
    
        let del = document.createElement("button");
-       del.innerText = "DEL";
+       del.innerText = "delete";
        del.classList.add("btn");
        del.classList.add("fa-regular");
        del.classList.add("delete");
@@ -343,23 +343,27 @@ function checker(){
     
 };
 function resetplayer() {
-    let current_player = Object.keys(player)[1];
 
-    let highscore = (Object.keys(player)[0]); // Convert first key to a number
-    for(let i=0; i< Object.keys(player).length; i++)
-        { if(highscore< Object.keys(player)[i])
-            { 
-                highscore = Object.keys(player)[i];
-    } }
+    let highscorePlayer = Object.keys(player)[0];
+    let highscore = player[highscorePlayer]; // initialize with that player's score
+    for (let i = 1; i < Object.keys(player).length; i++) {
+        let playerName = Object.keys(player)[i];
+        let playerScore = player[playerName];
+
+        if (playerScore > highscore) {
+            highscore = playerScore;
+            highscorePlayer = playerName;
+        }
+    }
     
     
     console.log("Highest score:", highscore);
-    console.log("current player:", current_player);
-    player = [];
+    console.log("Highest score player:", highscorePlayer);
+    player = {};
     let screen = document.querySelector(".text-center");
     screen.innerHTML = `<h1>Winner </h1> <div class="winner">
                 <i class="fa-solid fa-crown"></i>
-                ${highscore}
+                ${highscorePlayer}
              </div><br>
              <button class="btn next">Next</button>`;
     let next = document.querySelector("button");
