@@ -69,8 +69,9 @@ function starting(){
         Done();
    
        let del = document.createElement("button");
-       del.innerText = "delete";
+       del.innerText = "DEL";
        del.classList.add("btn");
+       del.classList.add("fa-regular");
        del.classList.add("delete");
        del.classList.add("btn-outline-danger");
    
@@ -99,7 +100,7 @@ list.addEventListener("click", function(event){
 function Done(){
     if(Object.keys(player).length== 2){
         let ok = document.createElement("button");
-        ok.innerText = "Play";
+        ok.innerText = "PLAY";
         ok.classList.add("btn");
         ok.classList.add("btn-outline-success");
     
